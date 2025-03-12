@@ -26,9 +26,9 @@ const Home: FC = () => {
   return (
     <div>
       <Head>
-        <title>My Next.js One-Pager</title>
-        <meta name="description" content="A simple one-page site with Next.js and TypeScript" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>the difference between the Euro and the USD</title>
+        <meta name="description" content="A simple one-page site built with Next.js and TypeScript that displays the current exchange rate difference between the Euro and the USD." />
+        <link rel="icon" href="icons/favicon.svg" />
       </Head>
     
       <main>
