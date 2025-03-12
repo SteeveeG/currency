@@ -1,5 +1,5 @@
 import React  from 'react';
-import css from './DisplayBox.module.css';
+import css from './displayBox.module.css';
  
 
 interface DisplayBoxProps {
