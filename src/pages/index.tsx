@@ -1,8 +1,26 @@
 import { FC } from 'react';
 import Head from 'next/head';
 import Display from '../components/display/display';
-import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
+import { GetServerSideProps } from 'next';
+import { scrapeWebsite } from './../../lib/scraper';
+
+
+interface HomeProps {
+  scrapedData: string;
+}
+
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+  const url = process.env.WEBSITE_URL as string;
+  const cssClass = process.env.CLASS_NAME as string;
+  const data = await scrapeWebsite(url,cssClass);
+
+  return {
+    props: {
+      scrapedData: data,
+    },
+  };
+}
 
 const Home: FC = () => {
   return (
@@ -17,8 +35,6 @@ const Home: FC = () => {
         <Header />
         <Display />
       </main>
-
-      <Footer />
     </div>
   );
 };

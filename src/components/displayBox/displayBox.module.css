@@ -1,3 +1,75 @@
-.wrapper{
+ 
+ 
+.positiveWrapper, .negativeWrapper{
+     width:fit-content;
+     height: 100px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     padding: 0 50px;
+}
+
+
+.positiveWrapper {
+     background-color: rgb(4 255 33 / 34%); 
+     color: #007A0E;
+}
+
+.negativeWrapper{
+     background-color: rgb(255 4 4 / 34%);
+     color: #7A0000;
+}
+.currency{
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     user-select: none;
+}
+ 
+
+@media (max-width: 930px) {
+     .positiveWrapper,.negativeWrapper{
+          padding: 8vw;
+          font-size: 3vw;
+     }
+     .currency{
+          font-size: 0.7em;
+     }
+}
+
+@media (max-width: 500px) {
+     .negativeWrapper,
+     .positiveWrapper{
+          padding: 15vw;
+          font-size: 6vw;
+     }
+     .currency{
+          font-size: 4vw;
+     }
+}
+
+
+@media (min-width: 930px) {
+      
+     .positiveWrapper, .negativeWrapper{
+          padding: 66px;
+          font-size: 1.7em;
+     }
+     .currency{
+          font-size: 0.7em;
+     }
+}
+
+
+@media (min-width: 1400px) {
+     .positiveWrapper, .negativeWrapper{
+          padding: 5vw 4vw;
+          font-size: 1.7vw;
+     }
+     .currency{
+          font-size: 1.5vw;
+     }
      
 }

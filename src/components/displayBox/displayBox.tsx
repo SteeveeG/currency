@@ -1,40 +1,24 @@
-import React, {useEffect, useState} from 'react'
-import css from './displayBox.module.css'
-import axios from 'axios';
-import * as cheerio from 'cheerio';
+import React, { useEffect, useState } from 'react';
+import css from './DisplayBox.module.css';
+ 
 
-function displayBox({currency}){
-     const [euroValue, setEuroValue] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchEuroValue = async () => {
-      try {
-        const url = "website";
-        const response = await axios.get(url);
-        const $ = cheerio.load(response.data);
-
-        // Element mit der Klasse 'YMlKec fxKbKc' finden
-        const euroValueElement = $('div.classname');
-        const value = euroValueElement.text();
-
-        setEuroValue(value);
-      } catch (error) {
-        console.error('Fehler beim Abrufen der Daten:', error);
-      }
-    };
-
-    fetchEuroValue();
-  }, []);
-   
-     
-  return (
-      <div className={css.wrapper}>
-          
-          <p>1,0000</p>
-          <p>{currency}</p>
-
-     </div>
-  )
+interface DisplayBoxProps {
+  currency: string,
+  euroValue: string,
+  isPositive: boolean
 }
 
-export default displayBox
+const DisplayBox: React.FC<DisplayBoxProps> = ({ currency, euroValue, isPositive}) => {
+
+ 
+return (
+  <div className={isPositive ? css.positiveWrapper : css.negativeWrapper}>
+    <p>{euroValue}</p>
+    <p className={css.currency}>{currency}</p>
+  </div>
+);
+}
+
+export default DisplayBox;
+
+

@@ -1,4 +1,4 @@
-.wrapper {
+.currencyWrapper {
      margin-top: 50px;
      display: flex;
      flex-direction: row;
@@ -7,6 +7,62 @@
      align-items: center;
 }
 
-.equals {
-     
+.wrapper{
+
 }
+
+.equals {
+     user-select: none;
+}
+
+.comparison{
+     margin-top: 40px;
+     display: block;
+     text-align: center;
+}
+ 
+
+@media (max-width: 930px) {
+     .comparison{
+          font-size: 2vw;
+     }
+     .equals{
+          font-size: 4.5vw;
+      }
+}
+@media (max-width: 500px) {
+     .currencyWrapper{
+          flex-direction: column;
+     }
+     .comparison{
+          font-size: 4vw;
+     }
+     .equals{
+          font-size: 7.5vw;
+      }
+}
+
+@media (min-width: 930px) {
+     .currencyWrapper{
+          gap: 30px;
+     }
+     .equals{
+          font-size: 1.9em;
+      }
+      .comparison{
+          font-size: 1.1em;
+
+      }
+}
+@media (min-width: 1400px) {
+     .equals{
+         font-size: 2vw;
+     }
+     .comparison{
+          font-size: 1.5vw;
+     }
+     .currencyWrapper{
+          gap: 1.6vw;
+     }
+      
+} 
