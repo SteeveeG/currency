@@ -1,40 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-## Getting Started
+# Currency
+Willkommen zum Next.js TypeScript-Projekt "Currency"!
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Dieses Projekt ist ein kleiner Web-Scraper, der den aktuellen Wechselkurs von Euro zu US-Dollar abruft und anschaulich darstellt. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+"Currency" ist mehr als nur ein Tool; es hat mir geholfen, tiefere Einblicke in die Welt von TypeScript zu gewinnen und meine Kenntnisse in Next.js zu vertiefen. 
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Vielen Dank, dass du dir die Zeit nimmst, mein Projekt anzusehen. Ich freue mich über jeden Kommentar und jedes Feedback!
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Um dieses Projekt auszuführen, müssen Sie die folgenden Umgebungsvariablen zu Ihrer .env-Datei hinzufügen:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+`WEBSITE_URL`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Diese Variable sollte die URL der Website enthalten, die von deinem Web-Scraper besucht wird. Hier gibst du die Zielwebsite an, von der du Daten abrufen möchtest, wie zum Beispiel den Euro-Dollar-Wechselkurs.
 
-## Deploy on Vercel
+`CLASS_NAME`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Diese Variable gibt den Namen der CSS-Klasse an, die verwendet wird, um das spezifische HTML-Element auf der Zielwebsite zu identifizieren, das die gewünschten Daten enthält. Du solltest hier den Klassennamen angeben, der mit dem HTML-Element übereinstimmt, das du scrapen möchtest.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
+Durch die Verwendung von Umgebungsvariablen kannst du die Konfiguration deines Scrapers flexibel anpassen, ohne den Code selbst ändern zu müssen. Diese Methode ist besonders nützlich für die Handhabung von sensiblen Informationen oder häufigen Änderungen.
+## Tech Stack
+
+**Client:** Next.js, TypeScript, TailwindCSS (never used hahahhah)
+
+**Server:** Next.js API Routes, Node.js
+
+
+ 
+
+## Demo
+
+[Demo](https://currentexchangeratebetweeneuroandusd.netlify.app/)
+
