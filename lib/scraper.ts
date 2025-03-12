@@ -1,5 +1,4 @@
 import axios from 'axios';
-import * as cheerio from 'cheerio';
 
 export async function scrapeWebsite(url: string, cssClass: string): Promise<string> {
      try {

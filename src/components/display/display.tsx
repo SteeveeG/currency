@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import css from './display.module.css'
 import Box from '../displayBox/displayBox'
 
-const display = () => {
+const Display = () => {
   const [euroValue, setEuroValue] = useState<string>("");
 
 
@@ -23,8 +23,6 @@ const display = () => {
 
   return (
     <div className={css.wrapper}>
-
-
       <div className={css.currencyWrapper}>
         <Box currency={"euro"} euroValue={"1,0000€"} isPositive={parseFloat((euroValue as string).replace(',', '.')) > 1.0000} />
         <p className={css.equals}>=</p>
@@ -35,4 +33,4 @@ const display = () => {
   )
 }
 
-export default display
+export default Display
