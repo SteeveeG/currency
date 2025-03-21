@@ -12,6 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
   try {
     const data = await scrapeWebsite(url, cssClass);
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
     res.status(200).json({ scrapedData: data });
   } catch (error) {
     console.error('Error fetching scraped data:', error);
