@@ -7,19 +7,28 @@ const Display = () => {
 
 
   useEffect(() => {
+    let isActive = true;
+
+    const startScraping = async () => {
+      while (isActive) {
+        try {
+          const response = await fetch('/api/scraped-data');
+          const data: { scrapedData?: string; error?: string } = await response.json();
+          setEuroValue(data.scrapedData || '');
+
+          await new Promise(resolve => setTimeout(resolve, 5000));
+        } catch (error) {
+          console.error("error while calling data error:", error);
+        }
+      }
+
+      if (isActive) startScraping();
+    };
+
     startScraping();
+
+    return () => { isActive = false };
   }, []);
-
-  async function startScraping() {
-    const response = await fetch('/api/scraped-data');
-    const data: { scrapedData?: string; error?: string } = await response.json();
-    setEuroValue(data.scrapedData as string)
-    setTimeout(async () => {
-      setEuroValue(data.scrapedData as string)
-      setTimeout(startScraping, 2000);
-    }, 2000);
-  }
-
 
   return (
     <div className={css.wrapper}>

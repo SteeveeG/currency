@@ -1,4 +1,3 @@
-
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { scrapeWebsite } from '../../../lib/scraper';  
 
